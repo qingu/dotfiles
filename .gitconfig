@@ -1,0 +1,60 @@
+[merge]
+    ;tool = extMerge
+	tool = vimdiff
+[mergetools "extMerge"]
+    cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = false
+;[diff]
+    ;external = extDiff
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+    amend = commit --amend
+	last = log -1 HEAD
+    tags = tag -n1 -l
+    staged = diff --cached
+	unstage = reset HEAD --
+    changes = log --oneline --reverse
+    w = whatchanged
+    pyc = !$(find . -name '*.pyc' | xargs rm -rf)
+    graph = log --graph --oneline --decorate
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    info = config --list
+    summary = log --oneline
+    pop = !git stash apply && git stash clear
+    gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+    # prune all tracking local branches that have been removed from remote:
+    prune-all = !git remote | xargs -n 1 git remote prune
+    # show full history in gitk (including "deleted" branches and stashes)
+    history-all = !gitk --all $( git fsck | awk '/dangling commit/ {print $3}' )
+    # show list of contributors in descending order by number of commits
+    rank = shortlog -sn --no-merges
+    # given a string for an author, try to figure out full name and email:
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    # given any git object, try to show it briefly
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    searchcommits = "!f() { query=\"$1\"; shift; git log -S\"$query\" \"$@\"; }; f \"$@\""
