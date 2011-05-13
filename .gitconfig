@@ -4,8 +4,11 @@
 [mergetools "extMerge"]
     cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
     trustExitCode = false
-;[diff]
+[diff]
     ;external = extDiff
+
+    ; just for windows.
+    external = git_diff_wrapper.bat
 
 [color]
     diff = auto
