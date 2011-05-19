@@ -43,3 +43,12 @@
 --regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
 --regex-javascript=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(([A-Za-z0-9_$, \t]*)\)/\1(\2)/f,function/
 --regex-javascript=/function[ \t]*([A-Za-z0-9._$]+)[ \t]*\(([A-Za-z0-9$_, \t]*)\)/\1(\2)/f,function/
+
+--langdef=markdown
+--langmap=markdown:.mkd.markdown
+--regex-markdown=/^#[ \t]+(.+)$/\1/h,header/
+--regex-markdown=/^##[ \t]+(.+)$/. \1/h,header/
+--regex-markdown=/^###[ \t]+(.+)$/.   \1/h,header/
+--regex-markdown=/^####[ \t]+(.+)$/.     \1/h,header/
+--regex-markdown=/^#####[ \t]+(.+)$/.       \1/h,header/
+--regex-markdown=/^######[ \t]+(.+)$/.         \1/h,header/
