@@ -52,3 +52,12 @@
 --regex-markdown=/^####[ \t]+(.+)$/.     \1/h,header/
 --regex-markdown=/^#####[ \t]+(.+)$/.       \1/h,header/
 --regex-markdown=/^######[ \t]+(.+)$/.         \1/h,header/
+
+--langdef=textile
+--langmap=textile:.textile
+--regex-markdown=/^h1.[ \t]+(.+)$/\1/h,header/
+--regex-markdown=/^h2.[ \t]+(.+)$/. \1/h,header/
+--regex-markdown=/^h3.[ \t]+(.+)$/.   \1/h,header/
+--regex-markdown=/^h4.[ \t]+(.+)$/.     \1/h,header/
+--regex-markdown=/^h5.[ \t]+(.+)$/.       \1/h,header/
+--regex-markdown=/^h6.[ \t]+(.+)$/.         \1/h,header/
