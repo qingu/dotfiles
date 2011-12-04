@@ -38,6 +38,15 @@
 --regex-wiki=/^=====[ \t]+(.+)[ \t]+=====$/.       \1/h,header/
 --regex-wiki=/^======[ \t]+(.+)[ \t]+======$/.         \1/h,header/
 
+--langdef=confluencewiki
+--langmap=confluencewiki:.wiki
+--regex-confluencewiki=/^h1.[ \t]+(.+)$/\1/h,header/
+--regex-confluencewiki=/^h2.[ \t]+(.+)$/. \1/h,header/
+--regex-confluencewiki=/^h3.[ \t]+(.+)$/.   \1/h,header/
+--regex-confluencewiki=/^h4.[ \t]+(.+)$/.     \1/h,header/
+--regex-confluencewiki=/^h5.[ \t]+(.+)$/.       \1/h,header/
+--regex-confluencewiki=/^h6.[ \t]+(.+)$/.         \1/h,header/
+
 --langdef=javascript
 --langmap=javascript:.js
 --regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
