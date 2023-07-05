@@ -50,20 +50,20 @@ local on_attach = function(_, bufnr)
 end
 
 -- lsp server setting
-lspconfig.gopls.setup({
-	cmd = { "gopls", "serve" },
-	filetypes = { "go", "gomod" },
-	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-	settings = {
-		gopls = {
-			analyses = {
-				unusedparams = true,
-			},
-			staticcheck = true,
-		},
-	},
-	on_attach = on_attach,
-})
+-- lspconfig.gopls.setup({
+-- 	cmd = { "gopls", "serve" },
+-- 	filetypes = { "go", "gomod" },
+-- 	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+-- 	settings = {
+-- 		gopls = {
+-- 			analyses = {
+-- 				unusedparams = true,
+-- 			},
+-- 			staticcheck = true,
+-- 		},
+-- 	},
+-- 	on_attach = on_attach,
+-- })
 
 require("lspconfig").lua_ls.setup({
 	settings = {
@@ -91,19 +91,19 @@ require("lspconfig").lua_ls.setup({
 	on_attach = on_attach,
 })
 
-require("lspconfig").rust_analyzer.setup({
-	settings = {
-		["rust-analyzer"] = {
-			diagnostics = {
-				enable = false,
-			},
-		},
-	},
-	cmd = { "rust-analyzer" },
-	filetypes = { "rust" },
-	root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
-	on_attach = on_attach,
-})
+-- require("lspconfig").rust_analyzer.setup({
+-- 	settings = {
+-- 		["rust-analyzer"] = {
+-- 			diagnostics = {
+-- 				enable = false,
+-- 			},
+-- 		},
+-- 	},
+-- 	cmd = { "rust-analyzer" },
+-- 	filetypes = { "rust" },
+-- 	root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
+-- 	on_attach = on_attach,
+-- })
 
 require("lspconfig").bashls.setup({
 	cmd = { "bash-language-server", "start" },
@@ -115,4 +115,14 @@ require("lspconfig").bashls.setup({
 	filetypes = { "sh" },
 	root_dir = util.find_git_ancestor,
 	on_attach = on_attach,
+})
+
+require("lspconfig").fortls.setup({
+	cmd = {
+		'fortls',
+		'--lowercase_intrisics',
+		'--hover_signature',
+		'--hover_language-fortran',
+		'--use_signature_help'
+	}
 })

@@ -11,6 +11,7 @@
 ## 联网安装
 
 ```bash
+$ git clone https://github.com/qingu/dotfiles.git
 $ cd dotfiles/scripts
 $ bash install.sh
 ```
