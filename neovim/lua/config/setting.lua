@@ -7,6 +7,9 @@
 --* Description      :
 --**********************************************************
 
+-- disable netrw at the very start of init.lua as suggested by nvim-tree
+vim.g.loaded_netrw = 1 
+vim.g.loaded_netrwPlugin = 1
 -- tab 4个空格
 vim.o.tabstop = 4
 -- 编码格式utf-8
