@@ -7,6 +7,7 @@
 
 - git 
 - nodejs / npm
+- wget
 
 ## 联网安装
 
