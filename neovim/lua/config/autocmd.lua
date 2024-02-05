@@ -1,7 +1,7 @@
 --**********************************************************
---* Author           : forgocode
---* Email            : forgocode@163.com
---* Github           : https://github.com/forgocode
+--* Author           : Jiang Qingu
+--* Email            : jiangqingu@gmail.com
+--* Github           : https://github.com/qingu
 --* Create Time      : 2023-06-08 13:11
 --* FileName         : autocmd.lua
 --* Description      :
@@ -13,9 +13,9 @@ vim.cmd([[
 	autocmd BufNewFile *.yaml,*.sh,*.yml,Dockerfile* :call Set_Common_Info() | normal G 
     function Set_Common_Info()
 	  call setline(1, '# **********************************************************')
-	  call setline(2, '# * Author           : forgocode')
-	  call setline(3, '# * Email            : forgocode@163.com')
-	  call setline(4, '# * Github           : https://github.com/forgocode')
+	  call setline(2, '# * Author           : Jiang Qingu')
+	  call setline(3, '# * Email            : jiangqingu@gmail.com')
+	  call setline(4, '# * Github           : https://github.com/qingu')
 	  call setline(5, '# * Create Time      : '.strftime("%Y-%m-%d %H:%M"))
 	  call setline(6, '# * FileName         : '.expand("%"))
 	  call setline(7, '# * Description      : ')
@@ -56,9 +56,9 @@ vim.cmd([[
 	autocmd BufNewFile *.lua :call Set_Lua_Info() | normal G 
     function Set_Lua_Info()
 	  call setline(1, '-- **********************************************************')
-	  call setline(2, '-- * Author           : forgocode')
-	  call setline(3, '-- * Email            : forgocode@163.com')
-	  call setline(4, '-- * Github           : https://github.com/forgocode')
+	  call setline(2, '-- * Author           : Jiang Qingu')
+	  call setline(3, '-- * Email            : jiangqingu@gmail.com')
+	  call setline(4, '-- * Github           : https://github.com/qingu')
 	  call setline(5, '-- * Create Time      : '.strftime("%Y-%m-%d %H:%M"))
 	  call setline(6, '-- * FileName         : '.expand("%"))
 	  call setline(7, '-- * Description      : ')
