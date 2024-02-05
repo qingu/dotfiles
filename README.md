@@ -8,6 +8,7 @@
 - git 
 - nodejs / npm
 - wget
+- Nerd Fonts (optional)
 
 ## 联网安装
 
