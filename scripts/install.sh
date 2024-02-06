@@ -18,6 +18,7 @@ declare -A config_dir
 
 config_dir["neovim"]="~/.config/nvim/"
 config_dir["tmux"]="~/.tmux.conf"
+config_dir["tpm"]="~/.tmux/plugins/tpm/"
 #config_dir["oh-my-zsh"]="/root/.zshrc"
 
 print_start() {
@@ -55,8 +56,13 @@ rm_config_path() {
 	#rm ~/.p10k.zsh
 	rm ~/.tmux.conf
 	rm -rf ~/.config/nvim
+	rm -rf ~/.tmux/
 }
 
+download_tmux_tpm() {
+	[[ ! -d ~/.tmux/plugins ]] && mkdir -p ~/.tmux/plugins
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
 download_nvim_config() {
 	printf "download neovim config\n"
 }
@@ -81,6 +87,10 @@ else
 	printf '%s\n' "don't clean you config, return"
 fi
 ln_config
+download_tmux_tpm
+
+echo "export PATH=~/.tmux/plugins/tmuxifier/bin:$PATH" >> ~/.bashrc
+echo 'eval "$(tmuxifier init -)"' >> ~/.bash_profile
 # rm_config_path
 #
 printf "\033[32mConfig is update successfully! enjoy it.\033[0m\n"

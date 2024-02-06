@@ -18,5 +18,7 @@ $ cd dotfiles/scripts
 $ bash install.sh
 ```
 
+安装完成后，`tmux`进入tmux环境，执行`prefix+I`安装tmux插件。
+
 ## 离线安装说明
 
