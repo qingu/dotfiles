@@ -113,10 +113,10 @@ check
 #	printf '%s\n' "don't clean you config, return"
 #fi
 
-printf "\033[31mReady to backup your old config? \033[0m\n"
+printf "\033[31mReady to backup your old config \033[0m\n"
 backup_config
 
-printf "\033[31mReady to use new config? \033[0m\n"
+printf "\033[31mReady to use new config \033[0m\n"
 printf "\033[31mChoose if want to use astronvim?(y/n) \033[0m\n"
 read -r use_astronvim
 if [ "$use_astronvim" = "y" ]; then
