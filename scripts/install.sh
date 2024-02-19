@@ -63,10 +63,8 @@ ln_nvim_config() {
 ln_tmux_config() {
 	ln -sf "$MYDIR/../tmux/tmux.conf" ~/.tmux.conf
 	download_tmux_tpm
-	echo "export PATH=~/.tmux/plugins/tmuxifier/bin:$PATH" >>~/.bashrc
-	echo 'eval "$(tmuxifier init -)"' >>~/.bash_profile
-	#ln -s ../powerlevel10k/p10k.zsh ~/.p10k.zsh
-	#ln -s ../oh-my-zsh/zshrc ~/.zshrc
+	#echo "export PATH=~/.tmux/plugins/tmuxifier/bin:$PATH" >>~/.bashrc
+	#echo 'eval "$(tmuxifier init -)"' >>~/.bash_profile
 }
 
 rm_config_path() {
