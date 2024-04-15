@@ -53,8 +53,10 @@ backup_config() {
 }
 
 ln_astronvim_config() {
-	ln -sf "$MYDIR/../astronvim/astronvim_config" ~/.config/nvim/lua/user
+	# ln -sf "$MYDIR/../astronvim/astronvim_config" ~/.config/nvim/lua/user
+	:
 }
+
 
 ln_nvim_config() {
 	ln -sf "$MYDIR/../neovim" ~/.config/nvim
@@ -77,7 +79,7 @@ rm_config_path() {
 
 download_tmux_tpm() {
 	[[ ! -d ~/.tmux/plugins ]] && mkdir -p ~/.tmux/plugins
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	[[ ! -d ~/.tmux/plugins/tpm ]] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 download_nvim_config() {
 	printf "download neovim config\n"
@@ -85,10 +87,11 @@ download_nvim_config() {
 
 download_astronvim_config() {
 	printf "download astronvim config\n"
-	git clone -b v3.45.3 --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+	# git clone -b v3.45.3 --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+	git clone git@github.com:qingu/astronvim_config_v4.git ~/.config/nvim
 	# astronvim config
-	git submodule init
-	git submodule update
+	# git submodule init
+	# git submodule update
 }
 
 download_tmux_config() {
@@ -120,7 +123,7 @@ read -r use_astronvim
 if [ "$use_astronvim" = "y" ]; then
 	printf "Use astronvim config\n"
 	download_astronvim_config
-	ln_astronvim_config
+	# ln_astronvim_config
 else
 	printf '%s\n' "Use ordinary nvim config"
 	download_nvim_config
