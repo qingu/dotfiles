@@ -85,7 +85,7 @@ download_nvim_config() {
 
 download_astronvim_config() {
 	printf "download astronvim config\n"
-	git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+	git clone -b v3.45.3 --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 	# astronvim config
 	git submodule init
 	git submodule update
